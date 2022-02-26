@@ -53,7 +53,7 @@ struct ContentView: View {
             onDelete: deleteAction,
             onValidate: validateAction,
             onSave: saveAction,
-            titler: { _ in Text(title).font(.largeTitle) })
+            titler: { _ in title })
     }
     
     // MARK: - Views

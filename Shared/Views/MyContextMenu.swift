@@ -42,8 +42,11 @@ public struct MyContextMenu<E>: ViewModifier where E: Identifiable
             .contextMenu {
                 DetailerViewButton(element: element) { toView = $0 }
                 DetailerEditButton(element: element, canEdit: config.canEdit) { toEdit = $0 }
-                Divider()
-                DetailerDeleteButton(element: element, canDelete: config.canDelete, onDelete: config.onDelete)
+                
+                if config.onDelete != nil {
+                    Divider()
+                    DetailerDeleteButton(element: element, canDelete: config.canDelete, onDelete: config.onDelete)
+                }
             }
     }
 }

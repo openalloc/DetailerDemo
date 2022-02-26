@@ -48,8 +48,10 @@ public struct MySwipeMenu<E>: ViewModifier where E: Identifiable
                     .tint(.blue)
             }
             .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                DetailerDeleteButton(element: element, canDelete: config.canDelete, onDelete: config.onDelete)
-                    .tint(.red)
+                if config.onDelete != nil {
+                    DetailerDeleteButton(element: element, canDelete: config.canDelete, onDelete: config.onDelete)
+                        .tint(.red)
+                }
             }
     }
 }
