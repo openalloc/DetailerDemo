@@ -4,6 +4,10 @@ A demonstration of _SwiftDetailer_, a multi-platform SwiftUI component for editi
 
 _DetailerDemo_ is part of the [OpenAlloc](https://github.com/openalloc) family of open source Swift software tools.
 
+macOS | iOS
+:---:|:---:
+![](https://github.com/openalloc/SwiftDetailer/blob/main/Images/macOSa.png)  |  ![](https://github.com/openalloc/SwiftDetailer/blob/main/Images/iOSa.png)
+
 ## Features
 
 * Demonstrates the various features of the _SwiftDetailer_ SwiftUI component

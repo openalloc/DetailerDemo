@@ -46,14 +46,19 @@ struct FruitTable<Menu>: View where Menu: ViewModifier {
                     .foregroundColor(fruit.color)
                     .modifier(menu(fruit))
             }
+            .width(250)
+            
             TableColumn("Weight", value: \.weight) {
                 Text(String(format: "%.0f g", $0.weight))
                     .modifier(menu($0))
             }
+            
+            .width(60)
             TableColumn("Color") {
                 RoundedRectangle(cornerRadius: 3).fill($0.color)
                     .modifier(menu($0))
             }
+            .width(40)
         }
         .onChange(of: sortOrder) {
             fruits.sort(using: $0)

@@ -53,7 +53,7 @@ struct ContentView: View {
             onDelete: deleteAction,
             onValidate: validateAction,
             onSave: saveAction,
-            titler: { _ in Text(title) })
+            titler: { _ in Text(title).font(.largeTitle) })
     }
     
     // MARK: - Views
@@ -199,7 +199,7 @@ struct ContentView: View {
             }
             HStack {
                 Text("Weight").clLeading()
-                Text("\(element.weight)").clTrailing()
+                Text(String(format: "%.0f g", element.weight)).clTrailing()
             }
             HStack {
                 Text("Color").clLeading()
