@@ -15,8 +15,6 @@
 		40A1040B27CA7D1C00D83293 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1040727CA7D1C00D83293 /* ContentView.swift */; };
 		40A1040D27CA7D2E00D83293 /* DetailerDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1040C27CA7D2E00D83293 /* DetailerDemoApp.swift */; };
 		40A1040E27CA7D2E00D83293 /* DetailerDemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1040C27CA7D2E00D83293 /* DetailerDemoApp.swift */; };
-		40A1041727CA7D8700D83293 /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40A1041627CA7D8700D83293 /* Detailer */; };
-		40A1041A27CA7D9000D83293 /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40A1041927CA7D9000D83293 /* Detailer */; };
 		40A1041E27CA7DFA00D83293 /* FruitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1041B27CA7DFA00D83293 /* FruitList.swift */; };
 		40A1041F27CA7DFA00D83293 /* FruitList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1041B27CA7DFA00D83293 /* FruitList.swift */; };
 		40A1042127CA7DFA00D83293 /* FruitTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1041C27CA7DFA00D83293 /* FruitTable.swift */; };
@@ -30,6 +28,10 @@
 		40A1042D27CA7E0100D83293 /* MyContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042627CA7E0100D83293 /* MyContextMenu.swift */; };
 		40A1042E27CA7E0100D83293 /* Alignment+CenterLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */; };
 		40A1042F27CA7E0100D83293 /* Alignment+CenterLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */; };
+		40A6667D27D16EB600C8F47A /* DetailerMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6667C27D16EB600C8F47A /* DetailerMenu */; };
+		40A6667F27D16EC100C8F47A /* DetailerMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6667E27D16EC100C8F47A /* DetailerMenu */; };
+		40A6668527D1737D00C8F47A /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6668427D1737D00C8F47A /* Detailer */; };
+		40A6668727D1738400C8F47A /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6668627D1738400C8F47A /* Detailer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,7 +57,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A1041727CA7D8700D83293 /* Detailer in Frameworks */,
+				40A6668527D1737D00C8F47A /* Detailer in Frameworks */,
+				40A6667D27D16EB600C8F47A /* DetailerMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A1041A27CA7D9000D83293 /* Detailer in Frameworks */,
+				40A6668727D1738400C8F47A /* Detailer in Frameworks */,
+				40A6667F27D16EC100C8F47A /* DetailerMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,7 +152,8 @@
 			);
 			name = "DetailerDemo (iOS)";
 			packageProductDependencies = (
-				40A1041627CA7D8700D83293 /* Detailer */,
+				40A6667C27D16EB600C8F47A /* DetailerMenu */,
+				40A6668427D1737D00C8F47A /* Detailer */,
 			);
 			productName = "DetailerDemo (iOS)";
 			productReference = 4080E67E27CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -168,7 +173,8 @@
 			);
 			name = "DetailerDemo (macOS)";
 			packageProductDependencies = (
-				40A1041927CA7D9000D83293 /* Detailer */,
+				40A6667E27D16EC100C8F47A /* DetailerMenu */,
+				40A6668627D1738400C8F47A /* Detailer */,
 			);
 			productName = "DetailerDemo (macOS)";
 			productReference = 4080E68427CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -204,7 +210,6 @@
 			);
 			mainGroup = 4080E67127CA7ABB0046D1FC;
 			packageReferences = (
-				40A1041527CA7D8700D83293 /* XCRemoteSwiftPackageReference "SwiftDetailer" */,
 			);
 			productRefGroup = 4080E67F27CA7ABB0046D1FC /* Products */;
 			projectDirPath = "";
@@ -538,26 +543,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		40A1041527CA7D8700D83293 /* XCRemoteSwiftPackageReference "SwiftDetailer" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/openalloc/SwiftDetailer.git";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
 /* Begin XCSwiftPackageProductDependency section */
-		40A1041627CA7D8700D83293 /* Detailer */ = {
+		40A6667C27D16EB600C8F47A /* DetailerMenu */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 40A1041527CA7D8700D83293 /* XCRemoteSwiftPackageReference "SwiftDetailer" */;
+			productName = DetailerMenu;
+		};
+		40A6667E27D16EC100C8F47A /* DetailerMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DetailerMenu;
+		};
+		40A6668427D1737D00C8F47A /* Detailer */ = {
+			isa = XCSwiftPackageProductDependency;
 			productName = Detailer;
 		};
-		40A1041927CA7D9000D83293 /* Detailer */ = {
+		40A6668627D1738400C8F47A /* Detailer */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 40A1041527CA7D8700D83293 /* XCRemoteSwiftPackageReference "SwiftDetailer" */;
 			productName = Detailer;
 		};
 /* End XCSwiftPackageProductDependency section */
