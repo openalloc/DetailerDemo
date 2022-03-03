@@ -19,6 +19,7 @@
 import SwiftUI
 
 import Detailer
+import DetailerMenu
 
 public struct MyContextMenu<E>: ViewModifier where E: Identifiable
 {
