@@ -246,8 +246,8 @@ struct ContentView: View {
         }
     }
     
-    private func deleteAction(_ id: Fruit.ID) {
-        guard let n = fruits.firstIndex(where: { $0.id == id }) else { return }
+    private func deleteAction(_ fruit: Fruit) {
+        guard let n = fruits.firstIndex(where: { $0.id == fruit.id }) else { return }
         _ = withAnimation(.default) {
             fruits.remove(at: n)
         }
