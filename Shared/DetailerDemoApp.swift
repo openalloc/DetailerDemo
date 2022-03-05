@@ -24,5 +24,8 @@ struct DetailerDemoApp: App {
         WindowGroup {
             ContentView(Fruit.bootstrap)
         }
+        .commands {
+            SidebarCommands() // adds a toggle sidebar to View menu
+        }
     }
-}
+}        
