@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		402EE27927DD3F3A0094F2FA /* TablerScroller in Frameworks */ = {isa = PBXBuildFile; productRef = 402EE27827DD3F3A0094F2FA /* TablerScroller */; };
-		402EE27B27DD3F400094F2FA /* TablerScroller in Frameworks */ = {isa = PBXBuildFile; productRef = 402EE27A27DD3F400094F2FA /* TablerScroller */; };
+		40275A2C27DD52F300DEC308 /* Sideways in Frameworks */ = {isa = PBXBuildFile; productRef = 40275A2B27DD52F300DEC308 /* Sideways */; };
+		40275A2E27DD52FF00DEC308 /* Sideways in Frameworks */ = {isa = PBXBuildFile; productRef = 40275A2D27DD52FF00DEC308 /* Sideways */; };
 		4080E68B27CA7ABB0046D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4080E67927CA7ABB0046D1FC /* Assets.xcassets */; };
 		4080E68C27CA7ABB0046D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4080E67927CA7ABB0046D1FC /* Assets.xcassets */; };
 		40A1040827CA7D1C00D83293 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1040627CA7D1C00D83293 /* Fruit.swift */; };
@@ -56,7 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				402EE27927DD3F3A0094F2FA /* TablerScroller in Frameworks */,
+				40275A2E27DD52FF00DEC308 /* Sideways in Frameworks */,
 				40A6668527D1737D00C8F47A /* Detailer in Frameworks */,
 				40A6667D27D16EB600C8F47A /* DetailerMenu in Frameworks */,
 			);
@@ -66,7 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				402EE27B27DD3F400094F2FA /* TablerScroller in Frameworks */,
+				40275A2C27DD52F300DEC308 /* Sideways in Frameworks */,
 				40A6668727D1738400C8F47A /* Detailer in Frameworks */,
 				40A6667F27D16EC100C8F47A /* DetailerMenu in Frameworks */,
 			);
@@ -154,7 +154,7 @@
 			packageProductDependencies = (
 				40A6667C27D16EB600C8F47A /* DetailerMenu */,
 				40A6668427D1737D00C8F47A /* Detailer */,
-				402EE27827DD3F3A0094F2FA /* TablerScroller */,
+				40275A2D27DD52FF00DEC308 /* Sideways */,
 			);
 			productName = "DetailerDemo (iOS)";
 			productReference = 4080E67E27CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -176,7 +176,7 @@
 			packageProductDependencies = (
 				40A6667E27D16EC100C8F47A /* DetailerMenu */,
 				40A6668627D1738400C8F47A /* Detailer */,
-				402EE27A27DD3F400094F2FA /* TablerScroller */,
+				40275A2B27DD52F300DEC308 /* Sideways */,
 			);
 			productName = "DetailerDemo (macOS)";
 			productReference = 4080E68427CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -544,13 +544,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		402EE27827DD3F3A0094F2FA /* TablerScroller */ = {
+		40275A2B27DD52F300DEC308 /* Sideways */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = TablerScroller;
+			productName = Sideways;
 		};
-		402EE27A27DD3F400094F2FA /* TablerScroller */ = {
+		40275A2D27DD52FF00DEC308 /* Sideways */ = {
 			isa = XCSwiftPackageProductDependency;
-			productName = TablerScroller;
+			productName = Sideways;
 		};
 		40A6667C27D16EB600C8F47A /* DetailerMenu */ = {
 			isa = XCSwiftPackageProductDependency;
