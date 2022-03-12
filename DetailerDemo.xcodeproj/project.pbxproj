@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		402EE27927DD3F3A0094F2FA /* TablerScroller in Frameworks */ = {isa = PBXBuildFile; productRef = 402EE27827DD3F3A0094F2FA /* TablerScroller */; };
+		402EE27B27DD3F400094F2FA /* TablerScroller in Frameworks */ = {isa = PBXBuildFile; productRef = 402EE27A27DD3F400094F2FA /* TablerScroller */; };
 		4080E68B27CA7ABB0046D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4080E67927CA7ABB0046D1FC /* Assets.xcassets */; };
 		4080E68C27CA7ABB0046D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4080E67927CA7ABB0046D1FC /* Assets.xcassets */; };
 		40A1040827CA7D1C00D83293 /* Fruit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1040627CA7D1C00D83293 /* Fruit.swift */; };
@@ -22,8 +24,6 @@
 		40A1042327CA7DFA00D83293 /* FruitGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1041D27CA7DFA00D83293 /* FruitGrid.swift */; };
 		40A1042827CA7E0100D83293 /* MySwipeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042427CA7E0100D83293 /* MySwipeMenu.swift */; };
 		40A1042927CA7E0100D83293 /* MySwipeMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042427CA7E0100D83293 /* MySwipeMenu.swift */; };
-		40A1042A27CA7E0100D83293 /* SidewaysScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042527CA7E0100D83293 /* SidewaysScroller.swift */; };
-		40A1042B27CA7E0100D83293 /* SidewaysScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042527CA7E0100D83293 /* SidewaysScroller.swift */; };
 		40A1042C27CA7E0100D83293 /* MyContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042627CA7E0100D83293 /* MyContextMenu.swift */; };
 		40A1042D27CA7E0100D83293 /* MyContextMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042627CA7E0100D83293 /* MyContextMenu.swift */; };
 		40A1042E27CA7E0100D83293 /* Alignment+CenterLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */; };
@@ -46,7 +46,6 @@
 		40A1041C27CA7DFA00D83293 /* FruitTable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitTable.swift; sourceTree = "<group>"; };
 		40A1041D27CA7DFA00D83293 /* FruitGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FruitGrid.swift; sourceTree = "<group>"; };
 		40A1042427CA7E0100D83293 /* MySwipeMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MySwipeMenu.swift; sourceTree = "<group>"; };
-		40A1042527CA7E0100D83293 /* SidewaysScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidewaysScroller.swift; sourceTree = "<group>"; };
 		40A1042627CA7E0100D83293 /* MyContextMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyContextMenu.swift; sourceTree = "<group>"; };
 		40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alignment+CenterLine.swift"; sourceTree = "<group>"; };
 		40A1043427CA802F00D83293 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402EE27927DD3F3A0094F2FA /* TablerScroller in Frameworks */,
 				40A6668527D1737D00C8F47A /* Detailer in Frameworks */,
 				40A6667D27D16EB600C8F47A /* DetailerMenu in Frameworks */,
 			);
@@ -66,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				402EE27B27DD3F400094F2FA /* TablerScroller in Frameworks */,
 				40A6668727D1738400C8F47A /* Detailer in Frameworks */,
 				40A6667F27D16EC100C8F47A /* DetailerMenu in Frameworks */,
 			);
@@ -130,7 +131,6 @@
 				40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */,
 				40A1042627CA7E0100D83293 /* MyContextMenu.swift */,
 				40A1042427CA7E0100D83293 /* MySwipeMenu.swift */,
-				40A1042527CA7E0100D83293 /* SidewaysScroller.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -154,6 +154,7 @@
 			packageProductDependencies = (
 				40A6667C27D16EB600C8F47A /* DetailerMenu */,
 				40A6668427D1737D00C8F47A /* Detailer */,
+				402EE27827DD3F3A0094F2FA /* TablerScroller */,
 			);
 			productName = "DetailerDemo (iOS)";
 			productReference = 4080E67E27CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -175,6 +176,7 @@
 			packageProductDependencies = (
 				40A6667E27D16EC100C8F47A /* DetailerMenu */,
 				40A6668627D1738400C8F47A /* Detailer */,
+				402EE27A27DD3F400094F2FA /* TablerScroller */,
 			);
 			productName = "DetailerDemo (macOS)";
 			productReference = 4080E68427CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -245,7 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A1042A27CA7E0100D83293 /* SidewaysScroller.swift in Sources */,
 				40A1042827CA7E0100D83293 /* MySwipeMenu.swift in Sources */,
 				40A1042227CA7DFA00D83293 /* FruitGrid.swift in Sources */,
 				40A1042E27CA7E0100D83293 /* Alignment+CenterLine.swift in Sources */,
@@ -261,7 +262,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40A1042B27CA7E0100D83293 /* SidewaysScroller.swift in Sources */,
 				40A1042927CA7E0100D83293 /* MySwipeMenu.swift in Sources */,
 				40A1042327CA7DFA00D83293 /* FruitGrid.swift in Sources */,
 				40A1042127CA7DFA00D83293 /* FruitTable.swift in Sources */,
@@ -544,6 +544,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		402EE27827DD3F3A0094F2FA /* TablerScroller */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TablerScroller;
+		};
+		402EE27A27DD3F400094F2FA /* TablerScroller */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = TablerScroller;
+		};
 		40A6667C27D16EB600C8F47A /* DetailerMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DetailerMenu;

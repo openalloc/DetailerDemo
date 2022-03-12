@@ -19,6 +19,7 @@
 import SwiftUI
 
 import Detailer
+import TablerScroller
 
 struct ContentView: View {
     
@@ -160,7 +161,7 @@ struct ContentView: View {
     
 #if os(macOS)
     private var tableDetailer: some View {
-        SidewaysScroller(minWidth: 600) {
+        TablerScroller(minWidth: 600) {
             FruitTable(fruits: $fruits,
                        selectedFruit: $selectedFruit,
                        menu: { MyContextMenu(config, $toView, $toEdit, $0) })
