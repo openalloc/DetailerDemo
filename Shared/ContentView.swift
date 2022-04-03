@@ -42,7 +42,6 @@ struct ContentView: View {
     @State private var selectedFruit: Set<Fruit.ID> = Set()
     @State private var toEdit: Fruit? = nil
     @State private var toView: Fruit? = nil
-    @State private var isAdd: Bool = false
     @State private var tab: Tabs = .list
     
     typealias Config = DetailerConfig<Fruit>
@@ -137,7 +136,7 @@ struct ContentView: View {
                   menu: menu)
             .editDetailer(config,
                           toEdit: $toEdit,
-                          isAdd: $isAdd,
+                          originalID: toEdit?.id,
                           detailContent: editDetail)
             .viewDetailer(config,
                           toView: $toView,
@@ -152,7 +151,7 @@ struct ContentView: View {
         }
         .editDetailer(config,
                       toEdit: $toEdit,
-                      isAdd: $isAdd,
+                      originalID: toEdit?.id,
                       detailContent: editDetail)
         .viewDetailer(config,
                       toView: $toView,
@@ -168,7 +167,7 @@ struct ContentView: View {
         }
         .editDetailer(config,
                       toEdit: $toEdit,
-                      isAdd: $isAdd,
+                      originalID: toEdit?.id,
                       detailContent: editDetail)
         .viewDetailer(config,
                       toView: $toView,
@@ -228,22 +227,21 @@ struct ContentView: View {
     private func editAction(_ id: Fruit.ID?) {
         guard let _id = id,
               let n = fruits.firstIndex(where: { $0.id == _id }) else { return }
-        isAdd = false
         toEdit = fruits[n]
     }
     
     private func addAction() {
-        isAdd = true                // NOTE cleared on dismissal of detail sheet
-        toEdit = Fruit()
+        // NOTE Fruit.ID defaults to "" (Fruit.nuID) rather than nil, which works better with TextField
+        toEdit = Fruit(id: Fruit.nuID, name: "", weight: 0, color: .gray)
     }
     
     private func saveAction(_ context: DetailerContext<Fruit>, _ element: Fruit) {
-        if let n = fruits.firstIndex(where: { $0.id == element.id }) {
-            fruits[n] = element
-        } else if isAdd {
+        if context.originalID == Fruit.nuID {
             withAnimation(.default) {
                 fruits.append(element)
             }
+        } else if let n = fruits.firstIndex(where: { $0.id == element.id }) {
+            fruits[n] = element
         }
     }
     

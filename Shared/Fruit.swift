@@ -19,26 +19,20 @@
 import SwiftUI
 
 struct Fruit: Identifiable {
+    
+    static let nuID = ""
+    
     var id: String
     var name: String
     var weight: Double
     var color: Color
-    init(_ id: String = "",
-         _ name: String = "",
-         _ weight: Double = 0,
-         _ color: Color = .gray) {
-        self.id = id
-        self.name = name
-        self.weight = weight
-        self.color = color
-    }
     
     static var bootstrap: [Fruit] = [
-        Fruit("🍌", "Banana", 118, .brown),
-        Fruit("🍓", "Strawberry", 12, .red),
-        Fruit("🍊", "Orange", 190, .orange),
-        Fruit("🥝", "Kiwi", 75, .green),
-        Fruit("🍇", "Grape", 7, .purple),
-        Fruit("🫐", "Blueberry", 2, .blue),
+        Fruit(id: "🍌", name: "Banana", weight: 118, color: .brown),
+        Fruit(id: "🍓", name: "Strawberry", weight: 12, color: .red),
+        Fruit(id: "🍊", name: "Orange", weight: 190, color: .orange),
+        Fruit(id: "🥝", name: "Kiwi", weight: 75, color: .green),
+        Fruit(id: "🍇", name: "Grape", weight: 7, color: .purple),
+        Fruit(id: "🫐", name: "Blueberry", weight: 2, color: .blue),
     ]
 }

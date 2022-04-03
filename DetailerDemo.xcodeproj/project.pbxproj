@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40275A2C27DD52F300DEC308 /* Sideways in Frameworks */ = {isa = PBXBuildFile; productRef = 40275A2B27DD52F300DEC308 /* Sideways */; };
 		40275A2E27DD52FF00DEC308 /* Sideways in Frameworks */ = {isa = PBXBuildFile; productRef = 40275A2D27DD52FF00DEC308 /* Sideways */; };
 		4080E68B27CA7ABB0046D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4080E67927CA7ABB0046D1FC /* Assets.xcassets */; };
 		4080E68C27CA7ABB0046D1FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4080E67927CA7ABB0046D1FC /* Assets.xcassets */; };
@@ -29,9 +28,10 @@
 		40A1042E27CA7E0100D83293 /* Alignment+CenterLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */; };
 		40A1042F27CA7E0100D83293 /* Alignment+CenterLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */; };
 		40A6667D27D16EB600C8F47A /* DetailerMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6667C27D16EB600C8F47A /* DetailerMenu */; };
-		40A6667F27D16EC100C8F47A /* DetailerMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6667E27D16EC100C8F47A /* DetailerMenu */; };
-		40A6668527D1737D00C8F47A /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6668427D1737D00C8F47A /* Detailer */; };
-		40A6668727D1738400C8F47A /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40A6668627D1738400C8F47A /* Detailer */; };
+		40F5EE2427FA30D1003FB46D /* DetailerMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 40F5EE2327FA30D1003FB46D /* DetailerMenu */; };
+		40F5EE2727FA30F2003FB46D /* Sideways in Frameworks */ = {isa = PBXBuildFile; productRef = 40F5EE2627FA30F2003FB46D /* Sideways */; };
+		40FB1A8E27FA39D80039F86D /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40FB1A8D27FA39D80039F86D /* Detailer */; };
+		40FB1A9027FA39E20039F86D /* Detailer in Frameworks */ = {isa = PBXBuildFile; productRef = 40FB1A8F27FA39E20039F86D /* Detailer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +49,9 @@
 		40A1042627CA7E0100D83293 /* MyContextMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyContextMenu.swift; sourceTree = "<group>"; };
 		40A1042727CA7E0100D83293 /* Alignment+CenterLine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Alignment+CenterLine.swift"; sourceTree = "<group>"; };
 		40A1043427CA802F00D83293 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		40F5EE2227FA30C6003FB46D /* SwiftDetailerMenu */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftDetailerMenu; path = ../SwiftDetailerMenu; sourceTree = "<group>"; };
+		40F5EE2527FA30E1003FB46D /* SwiftSideways */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftSideways; path = ../SwiftSideways; sourceTree = "<group>"; };
+		40FB1A8C27FA39CE0039F86D /* SwiftDetailer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftDetailer; path = ../SwiftDetailer; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,7 +60,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40275A2E27DD52FF00DEC308 /* Sideways in Frameworks */,
-				40A6668527D1737D00C8F47A /* Detailer in Frameworks */,
+				40FB1A9027FA39E20039F86D /* Detailer in Frameworks */,
 				40A6667D27D16EB600C8F47A /* DetailerMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,18 +69,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40275A2C27DD52F300DEC308 /* Sideways in Frameworks */,
-				40A6668727D1738400C8F47A /* Detailer in Frameworks */,
-				40A6667F27D16EC100C8F47A /* DetailerMenu in Frameworks */,
+				40F5EE2727FA30F2003FB46D /* Sideways in Frameworks */,
+				40FB1A8E27FA39D80039F86D /* Detailer in Frameworks */,
+				40F5EE2427FA30D1003FB46D /* DetailerMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4025900E27FA305F000D0794 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				40F5EE2227FA30C6003FB46D /* SwiftDetailerMenu */,
+				40F5EE2527FA30E1003FB46D /* SwiftSideways */,
+				40FB1A8C27FA39CE0039F86D /* SwiftDetailer */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
 		4080E67127CA7ABB0046D1FC = {
 			isa = PBXGroup;
 			children = (
+				4025900E27FA305F000D0794 /* Packages */,
 				40A1043427CA802F00D83293 /* README.md */,
 				4080E67627CA7ABB0046D1FC /* Shared */,
 				4080E68527CA7ABB0046D1FC /* macOS */,
@@ -153,8 +167,8 @@
 			name = "DetailerDemo (iOS)";
 			packageProductDependencies = (
 				40A6667C27D16EB600C8F47A /* DetailerMenu */,
-				40A6668427D1737D00C8F47A /* Detailer */,
 				40275A2D27DD52FF00DEC308 /* Sideways */,
+				40FB1A8F27FA39E20039F86D /* Detailer */,
 			);
 			productName = "DetailerDemo (iOS)";
 			productReference = 4080E67E27CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -174,9 +188,9 @@
 			);
 			name = "DetailerDemo (macOS)";
 			packageProductDependencies = (
-				40A6667E27D16EC100C8F47A /* DetailerMenu */,
-				40A6668627D1738400C8F47A /* Detailer */,
-				40275A2B27DD52F300DEC308 /* Sideways */,
+				40F5EE2327FA30D1003FB46D /* DetailerMenu */,
+				40F5EE2627FA30F2003FB46D /* Sideways */,
+				40FB1A8D27FA39D80039F86D /* Detailer */,
 			);
 			productName = "DetailerDemo (macOS)";
 			productReference = 4080E68427CA7ABB0046D1FC /* DetailerDemo.app */;
@@ -190,7 +204,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					4080E67D27CA7ABB0046D1FC = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -459,6 +473,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -489,6 +504,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -544,10 +560,6 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		40275A2B27DD52F300DEC308 /* Sideways */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = Sideways;
-		};
 		40275A2D27DD52FF00DEC308 /* Sideways */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Sideways;
@@ -556,15 +568,19 @@
 			isa = XCSwiftPackageProductDependency;
 			productName = DetailerMenu;
 		};
-		40A6667E27D16EC100C8F47A /* DetailerMenu */ = {
+		40F5EE2327FA30D1003FB46D /* DetailerMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DetailerMenu;
 		};
-		40A6668427D1737D00C8F47A /* Detailer */ = {
+		40F5EE2627FA30F2003FB46D /* Sideways */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Sideways;
+		};
+		40FB1A8D27FA39D80039F86D /* Detailer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Detailer;
 		};
-		40A6668627D1738400C8F47A /* Detailer */ = {
+		40FB1A8F27FA39E20039F86D /* Detailer */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Detailer;
 		};
