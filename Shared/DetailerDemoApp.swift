@@ -28,4 +28,4 @@ struct DetailerDemoApp: App {
             SidebarCommands() // adds a toggle sidebar to View menu
         }
     }
-}        
+}

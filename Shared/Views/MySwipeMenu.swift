@@ -16,30 +16,29 @@
 // limitations under the License.
 //
 
-
 import SwiftUI
 
 import Detailer
 import DetailerMenu
 
 @available(iOS 15.0, macOS 12.0, tvOS 15.0, watchOS 8.0, *)
-public struct MySwipeMenu<E>: ViewModifier where E: Identifiable
-{
+public struct MySwipeMenu<E>: ViewModifier where E: Identifiable {
     private var config: DetailerConfig<E>
     @Binding private var toView: E?
     @Binding private var toEdit: E?
     private var element: E
-    
+
     public init(_ config: DetailerConfig<E>,
                 _ toView: Binding<E?>,
                 _ toEdit: Binding<E?>,
-                _ element: E) {
+                _ element: E)
+    {
         self.config = config
         _toView = toView
         _toEdit = toEdit
         self.element = element
     }
-    
+
     public func body(content: Content) -> some View {
         content
             .swipeActions(edge: .leading, allowsFullSwipe: true) {
@@ -56,4 +55,3 @@ public struct MySwipeMenu<E>: ViewModifier where E: Identifiable
             }
     }
 }
-

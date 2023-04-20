@@ -21,29 +21,29 @@ import SwiftUI
 import Detailer
 import DetailerMenu
 
-public struct MyContextMenu<E>: ViewModifier where E: Identifiable
-{
+public struct MyContextMenu<E>: ViewModifier where E: Identifiable {
     private var config: DetailerConfig<E>
     @Binding private var toView: E?
     @Binding private var toEdit: E?
     private var element: E
-    
+
     public init(_ config: DetailerConfig<E>,
                 _ toView: Binding<E?>,
                 _ toEdit: Binding<E?>,
-                _ element: E) {
+                _ element: E)
+    {
         self.config = config
         _toView = toView
         _toEdit = toEdit
         self.element = element
     }
-        
+
     public func body(content: Content) -> some View {
         content
             .contextMenu {
                 DetailerViewButton(element: element) { toView = $0 }
                 DetailerEditButton(element: element, canEdit: config.canEdit) { toEdit = $0 }
-                
+
                 if config.onDelete != nil {
                     Divider()
                     DetailerDeleteButton(element: element, canDelete: config.canDelete, onDelete: config.onDelete)
@@ -51,4 +51,3 @@ public struct MyContextMenu<E>: ViewModifier where E: Identifiable
             }
     }
 }
-

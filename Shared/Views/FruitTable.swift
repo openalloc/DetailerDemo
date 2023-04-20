@@ -19,20 +19,19 @@
 import SwiftUI
 
 struct FruitTable<Menu>: View where Menu: ViewModifier {
-    
     // MARK: Parameters
-    
+
     @Binding var fruits: [Fruit]
-    //@Binding var selectedFruit: Fruit.ID?
+    // @Binding var selectedFruit: Fruit.ID?
     @Binding var selectedFruit: Set<Fruit.ID>
     var menu: (Fruit) -> Menu
 
     // MARK: Locals
-    
+
     @State private var sortOrder = [KeyPathComparator(\Fruit.name)]
-    
+
     // MARK: Views
-    
+
     var body: some View {
         Table(fruits, selection: $selectedFruit, sortOrder: $sortOrder) {
             TableColumn("ID", value: \.id) {
@@ -40,19 +39,19 @@ struct FruitTable<Menu>: View where Menu: ViewModifier {
                     .modifier(menu($0))
             }
             .width(20)
-            
+
             TableColumn("Name", value: \.name) { fruit in
                 Text(fruit.name)
                     .foregroundColor(fruit.color)
                     .modifier(menu(fruit))
             }
             .width(250)
-            
+
             TableColumn("Weight", value: \.weight) {
                 Text(String(format: "%.0f g", $0.weight))
                     .modifier(menu($0))
             }
-            
+
             .width(60)
             TableColumn("Color") {
                 RoundedRectangle(cornerRadius: 3).fill($0.color)
@@ -66,8 +65,8 @@ struct FruitTable<Menu>: View where Menu: ViewModifier {
     }
 }
 
-//struct FruitTable_Previews: PreviewProvider {
+// struct FruitTable_Previews: PreviewProvider {
 //    static var previews: some View {
 //        FruitTable()
 //    }
-//}
+// }

@@ -24,15 +24,17 @@ extension HorizontalAlignment {
             context[HorizontalAlignment.center]
         }
     }
+
     static let centerLine = Self(CenterLine.self)
 }
 
 // NOTE requires VStack(alignment: .centerLine) { ... }
 extension View {
     func clLeading() -> some View {
-        self.alignmentGuide(.centerLine) { $0[.trailing] }
+        alignmentGuide(.centerLine) { $0[.trailing] }
     }
+
     func clTrailing() -> some View {
-        self.alignmentGuide(.centerLine) { $0[.leading] }
+        alignmentGuide(.centerLine) { $0[.leading] }
     }
 }

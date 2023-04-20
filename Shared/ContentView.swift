@@ -22,30 +22,29 @@ import Detailer
 import Sideways
 
 struct ContentView: View {
-    
     public init(_ fruits: [Fruit]) {
         _fruits = State(initialValue: fruits)
     }
-    
+
     // MARK: - Locals
-    
+
     enum Tabs {
         case table
         case list
         case grid
     }
-    
+
     private let title = "Detailer Demo"
-    
+
     @State private var fruits: [Fruit]
-    //@State private var selectedFruit: Fruit.ID? = nil
+    // @State private var selectedFruit: Fruit.ID? = nil
     @State private var selectedFruit: Set<Fruit.ID> = Set()
     @State private var toEdit: Fruit? = nil
     @State private var toView: Fruit? = nil
     @State private var tab: Tabs = .list
-    
+
     typealias Config = DetailerConfig<Fruit>
-    
+
     private var config: Config {
         Config(
             canEdit: { $0.name != "Orange" },
@@ -53,82 +52,84 @@ struct ContentView: View {
             onDelete: deleteAction,
             onValidate: validateAction,
             onSave: saveAction,
-            titler: { _ in title })
+            titler: { _ in title }
+        )
     }
-    
+
     // MARK: - Views
-    
+
     var body: some View {
         Group {
-#if os(macOS)
-            theContent
-#elseif os(iOS)
-            NavigationView {
+            #if os(macOS)
                 theContent
-                    .navigationTitle(title)
-                    .toolbar {
-                        addButton
-                    }
-            }
-            .navigationViewStyle(StackNavigationViewStyle())
-#endif
+            #elseif os(iOS)
+                NavigationView {
+                    theContent
+                        .navigationTitle(title)
+                        .toolbar {
+                            addButton
+                        }
+                }
+                .navigationViewStyle(StackNavigationViewStyle())
+            #endif
         }
-#if os(macOS)
+        #if os(macOS)
         .toolbar {
             ToolbarItemGroup {
-                Button(action: { editAction(selectedFruit.first!) } ) {
+                Button(action: { editAction(selectedFruit.first!) }) {
                     Text("Edit")
                 }
                 .disabled(selectedFruit.count != 1)
-                
-                Button(action: { viewAction(selectedFruit.first!) } ) {
+
+                Button(action: { viewAction(selectedFruit.first!) }) {
                     Text("View")
                 }
                 .disabled(selectedFruit.count != 1)
-                
+
                 addButton
             }
         }
-#endif
+        #endif
     }
-    
+
     private var theContent: some View {
         TabView(selection: $tab) {
             listDetailer
                 .tabItem { Text("List") }
                 .tag(Tabs.list)
-            
+
             gridDetailer
                 .tabItem { Text("Grid") }
                 .tag(Tabs.grid)
-            
-#if os(macOS)
-            tableDetailer
-                .tabItem { Text("Table") }
-                .tag(Tabs.table)
-#endif
+
+            #if os(macOS)
+                tableDetailer
+                    .tabItem { Text("Table") }
+                    .tag(Tabs.table)
+            #endif
         }
         .padding()
     }
-    
+
     private var addButton: some View {
         Button(action: addAction) {
             Label("Add Item", systemImage: "plus")
         }
     }
-    
-#if os(macOS)
-    private func menu(_ fruit: Fruit) -> MyContextMenu<Fruit> {
-        MyContextMenu(config, $toView, $toEdit, fruit)
-    }
-#elseif os(iOS)
-    private func menu(_ fruit: Fruit) -> MySwipeMenu<Fruit> {
-        MySwipeMenu(config, $toView, $toEdit, fruit)
-    }
-#endif
-    
+
+    #if os(macOS)
+        private func menu(_ fruit: Fruit) -> MyContextMenu<Fruit> {
+            MyContextMenu(config, $toView, $toEdit, fruit)
+        }
+
+    #elseif os(iOS)
+        private func menu(_ fruit: Fruit) -> MySwipeMenu<Fruit> {
+            MySwipeMenu(config, $toView, $toEdit, fruit)
+        }
+    #endif
+
     // MARK: - List/Table/Grid/Detail Views
-    
+
     private var listDetailer: some View {
         FruitList(fruits: $fruits,
                   toEdit: $toEdit,
@@ -142,7 +143,7 @@ struct ContentView: View {
                           toView: $toView,
                           viewContent: viewDetail)
     }
-    
+
     private var gridDetailer: some View {
         ScrollView {
             FruitGrid(fruits: $fruits,
@@ -157,24 +158,24 @@ struct ContentView: View {
                       toView: $toView,
                       viewContent: viewDetail)
     }
-    
-#if os(macOS)
-    private var tableDetailer: some View {
-        Sideways(minWidth: 600) {
-            FruitTable(fruits: $fruits,
-                       selectedFruit: $selectedFruit,
-                       menu: { MyContextMenu(config, $toView, $toEdit, $0) })
+
+    #if os(macOS)
+        private var tableDetailer: some View {
+            Sideways(minWidth: 600) {
+                FruitTable(fruits: $fruits,
+                           selectedFruit: $selectedFruit,
+                           menu: { MyContextMenu(config, $toView, $toEdit, $0) })
+            }
+            .editDetailer(config,
+                          toEdit: $toEdit,
+                          originalID: toEdit?.id,
+                          detailContent: editDetail)
+            .viewDetailer(config,
+                          toView: $toView,
+                          viewContent: viewDetail)
         }
-        .editDetailer(config,
-                      toEdit: $toEdit,
-                      originalID: toEdit?.id,
-                      detailContent: editDetail)
-        .viewDetailer(config,
-                      toView: $toView,
-                      viewContent: viewDetail)
-    }
-#endif
-    
+    #endif
+
     private func editDetail(ctx: DetailerContext<Fruit>, element: Binding<Fruit>) -> some View {
         Form {
             TextField("ID", text: element.id)
@@ -186,7 +187,7 @@ struct ContentView: View {
             ColorPicker("Color", selection: element.color)
         }
     }
-    
+
     private func viewDetail(element: Fruit) -> some View {
         VStack(alignment: .centerLine, spacing: 10) {
             HStack {
@@ -207,34 +208,34 @@ struct ContentView: View {
             }
         }
     }
-    
+
     // MARK: Action Handlers
-    
+
     /// Element-level validation
-    private func validateAction(_ context: DetailerContext<Fruit>, _ fruit: Fruit) -> [String] {
+    private func validateAction(_: DetailerContext<Fruit>, _ fruit: Fruit) -> [String] {
         if fruit.name == "Grapes" && fruit.weight == 2.0 {
             return ["'Grapes' not a valid name if weight is 2.0.", "It's a weird constraint, we know."]
         }
         return []
     }
-    
+
     private func viewAction(_ id: Fruit.ID?) {
         guard let _id = id,
               let n = fruits.firstIndex(where: { $0.id == _id }) else { return }
         toView = fruits[n]
     }
-    
+
     private func editAction(_ id: Fruit.ID?) {
         guard let _id = id,
               let n = fruits.firstIndex(where: { $0.id == _id }) else { return }
         toEdit = fruits[n]
     }
-    
+
     private func addAction() {
         // NOTE Fruit.ID defaults to "" (Fruit.nuID) rather than nil, which works better with TextField
         toEdit = Fruit(id: Fruit.nuID, name: "", weight: 0, color: .gray)
     }
-    
+
     private func saveAction(_ context: DetailerContext<Fruit>, _ element: Fruit) {
         if context.originalID == Fruit.nuID {
             withAnimation(.default) {
@@ -244,7 +245,7 @@ struct ContentView: View {
             fruits[n] = element
         }
     }
-    
+
     private func deleteAction(_ fruit: Fruit) {
         guard let n = fruits.firstIndex(where: { $0.id == fruit.id }) else { return }
         _ = withAnimation(.default) {

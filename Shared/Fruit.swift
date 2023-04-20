@@ -19,14 +19,13 @@
 import SwiftUI
 
 struct Fruit: Identifiable {
-    
     static let nuID = ""
-    
+
     var id: String
     var name: String
     var weight: Double
     var color: Color
-    
+
     static var bootstrap: [Fruit] = [
         Fruit(id: "🍌", name: "Banana", weight: 118, color: .brown),
         Fruit(id: "🍓", name: "Strawberry", weight: 12, color: .red),

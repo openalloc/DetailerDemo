@@ -19,42 +19,41 @@
 import SwiftUI
 
 struct FruitGrid<Menu>: View where Menu: ViewModifier {
-    
     // MARK: Parameters
-    
+
     @Binding var fruits: [Fruit]
-    //@Binding var selectedFruit: Fruit.ID?
+    // @Binding var selectedFruit: Fruit.ID?
     @Binding var selectedFruit: Set<Fruit.ID>
     var menu: (Fruit) -> Menu
-    
+
     // MARK: Locals
-    
+
     private let columns = [GridItem(.adaptive(minimum: CGFloat(200)))]
     private let cornerRadius: CGFloat = 20
     private let borderWidth: CGFloat = 4
-    
+
     private func isSelected(_ id: Fruit.ID) -> Bool {
-#if os(iOS)
-        return false
-#elseif os(macOS)
-        return selectedFruit.contains(id)
-#endif
+        #if os(iOS)
+            return false
+        #elseif os(macOS)
+            return selectedFruit.contains(id)
+        #endif
     }
-    
+
     private func toggleSelected(_ id: Fruit.ID) {
-#if os(iOS)
-        return
-#elseif os(macOS)
-        if isSelected(id) {
-            selectedFruit.remove(id)
-        } else {
-            selectedFruit.insert(id)
-        }
-#endif
+        #if os(iOS)
+            return
+        #elseif os(macOS)
+            if isSelected(id) {
+                selectedFruit.remove(id)
+            } else {
+                selectedFruit.insert(id)
+            }
+        #endif
     }
-    
+
     // MARK: Views
-    
+
     var body: some View {
         VStack {
             LazyVGrid(columns: columns) {
@@ -79,7 +78,7 @@ struct FruitGrid<Menu>: View where Menu: ViewModifier {
         }
         .padding()
     }
-    
+
     private func cellContents(_ fruit: Fruit) -> some View {
         VStack(alignment: .leading, spacing: 5) {
             HStack(alignment: .top) {
@@ -98,8 +97,8 @@ struct FruitGrid<Menu>: View where Menu: ViewModifier {
     }
 }
 
-//struct FruitGrid_Previews: PreviewProvider {
+// struct FruitGrid_Previews: PreviewProvider {
 //    static var previews: some View {
 //        FruitGrid()
 //    }
-//}
+// }

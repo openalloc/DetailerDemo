@@ -19,24 +19,23 @@
 import SwiftUI
 
 struct FruitList<Menu>: View where Menu: ViewModifier {
-    
     // MARK: Parameters
-    
+
     @Binding var fruits: [Fruit]
     @Binding var toEdit: Fruit?
-    //@Binding var selectedFruit: Fruit.ID?
+    // @Binding var selectedFruit: Fruit.ID?
     @Binding var selectedFruit: Set<Fruit.ID>
     var menu: (Fruit) -> Menu
-    
+
     // MARK: Views
-    
+
     var body: some View {
         List(fruits, id: \.id, selection: $selectedFruit) { fruit in
             rowContents(fruit)
                 .modifier(menu(fruit))
         }
     }
-    
+
     private func rowContents(_ fruit: Fruit) -> some View {
         HStack(alignment: .top) {
             Text(fruit.id)
@@ -47,8 +46,8 @@ struct FruitList<Menu>: View where Menu: ViewModifier {
     }
 }
 
-//struct FruitTable_Previews: PreviewProvider {
+// struct FruitTable_Previews: PreviewProvider {
 //    static var previews: some View {
 //        FruitTable()
 //    }
-//}
+// }
